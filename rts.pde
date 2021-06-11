@@ -74,7 +74,7 @@ class RTS {
   void mouseDragged() {
     updateCursor();
     if (mouseButton == RIGHT) {
-      offset = cursor.minus(mark);
+      offset = cursor.minus(mark).div(scale);
       translation = gOffset.plus(offset);
     }
   }
