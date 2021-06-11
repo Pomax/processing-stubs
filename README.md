@@ -53,7 +53,7 @@ void setup() {
   // ...and then your code here...
 }
 ```
-This allows your sketch to be resizing via normal window manipulation, as well as through code. For example:
+This allows your sketch to be resized via normal window manipulation, as well as through code. For example:
 
 ```java
 void keyPressed() {
