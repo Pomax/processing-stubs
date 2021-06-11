@@ -6,7 +6,7 @@ Code that I constantly end up writing when using Processing.
 - `vec.pde`: `Vec2` and `Vec3` classes, based on doubles (depends on `double.pde`).
 - `vecutil.pde`: some math and drawing functions uplifted to allow `Vec2`/`Vec3` arguments (depends on `vec.pde`), including `lli` for finding line/line intersections.
 - `rts.pde`: universal "right-click-drag to pan" and "mouse scroll to zoom" behaviour (depends on `vec.pde`) through a global called `RTS`.
-- `bezier.pde`: `Bezier2` and `Bezier3` classes (depends on `vec.pde`).
+- `bezier.pde`: a `Bezier` class ([obviously](https://pomax.github.io/bezierinfo)).
 
 # Using the RTS class
 
