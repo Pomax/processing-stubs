@@ -7,3 +7,39 @@ Code that I constantly end up writing when using Processing.
 - `vecutil.pde`: some math and drawing functions uplifted to allow `Vec2`/`Vec3` arguments (depends on `vec.pde`), including `lli` for finding line/line intersections.
 - `transform.pde`: universal "right-click-drag to pan" and "mouse scroll to zoom" behaviour (depends on `vec.pde`)
 - `bezier.pde`: `Bezier2` and `Bezier3` classes (depends on `vec.pde`)
+
+# Using the RTS class
+
+Update your code to:
+
+```java
+void draw() {
+  RTS.apply();
+  // ...and then your code here... 
+}
+
+void mouseMoved() {
+  RTS.mouseMoved();
+  // ...and then your code here...  
+}
+
+void mousePressed() {
+  RTS.mousePressed();
+  // ...and then your code here...  
+  redraw();  
+}
+
+void mouseDragged() {
+  RTS.mouseDragged();  
+  // ...and then your code here...  
+  redraw();
+}
+
+void mouseWheel(MouseEvent event) {
+  RTS.mouseWheel(event.getCount());
+  // ...and then your code here...  
+  redraw();
+}
+```
+
+Note that redraw() is 100% mandatory for three of the four event handling functions. The reason it's not mandatory for mouse move is that usually, just moving the mouse is not enough to warrant a redraw. Of course, if your own code does something to warrant a redraw (e.g. highlighting something if the cursor is over it) then that would be a good reason to have a redraw().
