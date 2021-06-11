@@ -20,6 +20,14 @@ class RTS {
     cursor = new Vec2(0,0);
     zoomDiff = new Vec2(0,0);
   }
+  
+  void enableResize() {
+    surface.setResizable(true);
+  }
+  
+  void resize(double w, double h) {
+    surface.setSize((int)w, (int)h);
+  }
 
   void apply() {
     scale(scale);   
@@ -52,6 +60,7 @@ class RTS {
   
   void mouseMoved() {
     zoomPoint = null;
+    updateCursor();    
   }
 
   void mousePressed() {
