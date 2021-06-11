@@ -1,6 +1,7 @@
 // convenience vector representing the middle of the screen
 
 Vec2 __center;
+
 Vec2 center() {
   if (__center != null) return __center;
   __center = new Vec2(w()/2, h()/2);
@@ -18,42 +19,27 @@ void translate(Vec2 p) {
 void line(Vec2 p1, Vec2 p2) { 
   line(p1.x, p1.y, p2.x, p2.y);
 }
+
 void circle(Vec2 p) { 
   circle(p.x, p.y);
 }
+
 void circle(Vec2 p, double r) { 
   circle(p.x, p.y, r);
 }
+
 void ellipse(Vec2 p, double w, double h) { 
   ellipse(p.x, p.y, w, h);
 }
+
 void quad(Vec2 p1, Vec2 p2, Vec2 p3, Vec2 p4) { 
   quad(p1.x, p1.y, p2.x, p2.y, p3.x, p3.y, p4.x, p4.y);
 }
-void quad(Vec3 p1, Vec3 p2, Vec3 p3, Vec3 p4) {
-  beginShape();
-  scurve(p1, p2);
-  scurve(p2, p3);
-  scurve(p3, p4);
-  scurve(p4, p1);
-  endShape(CLOSE);
-}
+
 void vertex(Vec2 p) { 
   vertex(p.x, p.y);
 }
 
-void curve(Vec3 p1, Vec3 p2) {
-  beginShape();
-  scurve(p1, p2);
-  endShape();
-}
-
-void scurve(Vec3 p1, Vec3 p2) {
-  double dist = max(8, 2*p2.minus(p1).mag());
-  for (double i=0; i<=1; i+=1.0/dist) {
-    vertex(get(lerp(p1, p2, i)));
-  }
-}
 
 Vec2 lerp(Vec2 v1, Vec2 v2, double r) {
   double mr = 1-r;
