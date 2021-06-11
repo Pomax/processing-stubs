@@ -50,8 +50,7 @@ If you want your sketch to be resizable, you can use the RTS class for this, too
 
 void setup() {
   RTS.enableResize();
-  size(...);
-  ...
+  // ...and then your code here...
 }
 ```
 This allows your sketch to be resizing via normal window manipulation, as well as through code. For example:
@@ -61,6 +60,5 @@ void keyPressed() {
   if (key == '+') {
     RTS.resize(2*width, 2*height);
   }
-}
 }
 ```
