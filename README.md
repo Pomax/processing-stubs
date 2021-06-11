@@ -43,3 +43,24 @@ void mouseWheel(MouseEvent event) {
 ```
 
 Note that redraw() is 100% mandatory for three of the four event handling functions. The reason it's not mandatory for mouse move is that usually, just moving the mouse is not enough to warrant a redraw. Of course, if your own code does something to warrant a redraw (e.g. highlighting something if the cursor is over it) then that would be a good reason to have a redraw().
+
+If you want your sketch to be resizable, you can use the RTS class for this, too:
+
+```java
+
+void setup() {
+  RTS.enableResize();
+  size(...);
+  ...
+}
+```
+This allows your sketch to be resizing via normal window manipulation, as well as through code. For example:
+
+```java
+void keyPressed() {
+  if (key == '+') {
+    RTS.resize(2*width, 2*height);
+  }
+}
+}
+```
