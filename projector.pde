@@ -93,16 +93,18 @@ class Projector {
      *     / | \
      *    z--O--x
      *
-     * Constructor argument ordering: Vec2[X,Z,Y]
+     * Constructor argument ordering: Vec2[X,Z] or Vec2[X,Y,Z]
      */
     public PerspectiveProjector(Vec2 origin, double yScale, Vec2[] vanishingPoints) {
       O = origin;
-      Z = vanishingPoints[0];
-      X = vanishingPoints[1];
+      X = vanishingPoints[0];
+      Z = vanishingPoints[1];
 
       if (vanishingPoints.length == 3) {
         threePoint = true;
-        Y = vanishingPoints[2];
+        X = vanishingPoints[0];
+        Y = vanishingPoints[1];
+        Z = vanishingPoints[2];
       }
 
       HO = lli(O, O.plus(0, 10), Z, X);
