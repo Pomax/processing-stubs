@@ -32,7 +32,7 @@ jobs:
         run: |
           rm -rf bundle
           mkdir -p bundle
-          ls *.pde | xargs cat *.pde > bundle/bundle.pde
+          ls *.pde | xargs cat > bundle/bundle.pde
 
       # Form a commit
       - name: Commit changes
