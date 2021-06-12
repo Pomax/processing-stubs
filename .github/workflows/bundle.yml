@@ -31,6 +31,9 @@ jobs:
       - name: Packing up files
         run: |
           mkdir -p bundle
+          cd bundle
+          rm -f bundle.pde
+          cd ..
           ls *.pde | xargs cat *.pde > bundle.pde
           mv bundle.pde bundle
 
