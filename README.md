@@ -2,6 +2,12 @@
 
 Code that I constantly end up writing when using Processing.
 
+## If you want to use everything
+
+Just grab the `./bundle/bundle.pde` file.
+
+## If you want to cherry pick which functionality to use:
+
 - `double.pde`: almost all math and drawing functions uplifted to accept `double` values instead of `float`.
 - `vec.pde`: `Vec2` and `Vec3` classes, based on doubles (depends on `double.pde`).
 - `vecutil.pde`: some math and drawing functions uplifted to allow `Vec2`/`Vec3` arguments (depends on `vec.pde`), including `lli` for finding line/line intersections.
