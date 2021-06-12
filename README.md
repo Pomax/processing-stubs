@@ -254,7 +254,7 @@ Yields:
 
 ### Three point perspective
 
-This requires calling `Projector.createPerspective(origin, yScale, X, Z, Y)`, where `origin` is the 2D screen point that acts as (0,0,0), `yScale` tells the projector how high the horizon is with respect to the origin, `X` and `Z` are our right and left vanishing points in 2D screen coordiantes, respectively, and `Y` is our elevation vanishing point as 2D screen coordinate.
+This requires calling `Projector.createPerspective(origin, yScale, X, Y, Z)`, where `origin` is the 2D screen point that acts as (0,0,0), `yScale` tells the projector how high the horizon is with respect to the origin, `X` and `Z` are our right and left vanishing points in 2D screen coordiantes, respectively, and `Y` is our elevation vanishing point as 2D screen coordinate.
 
 ```
 // ...same globals as above...
