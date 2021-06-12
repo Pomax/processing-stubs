@@ -168,12 +168,18 @@ This requires calling `Projector.createPerspective(origin, yScale, X, Z)`, where
 Projector perspective;
 Vec3[] coords;
 Bezier curve, curveXY, curveXZ, curveYZ;
+double yScale = 5;
 
 void setup() {
   RTS.enableResize();
   size(500, 500);
 
-  perspective = Projector.createPerspective(center().plus(0,w()/4), yScale, new Vec2(0, h()/2), new Vec2(w(), h()/2));
+  perspective = Projector.createPerspective(
+    center().plus(0, w()/4),
+    yScale,
+    new Vec2(0, h()/2),
+    new Vec2(w(), h()/2)
+  );
 
   coords = new Vec3[]{
     new Vec3(2, 0, 2),
@@ -186,7 +192,33 @@ void setup() {
 }
 
 void setupProjector(Projector p) { 
-  // ...as above...
+  curve = new Bezier(
+    p.project(coords[0]),
+    p.project(coords[1]),
+    p.project(coords[2]),
+    p.project(coords[3])
+  );
+
+  curveXY = new Bezier(
+    p.projectXY(coords[0]),
+    p.projectXY(coords[1]),
+    p.projectXY(coords[2]),
+    p.projectXY(coords[3])
+  );
+
+  curveXZ = new Bezier(
+    p.projectXZ(coords[0]),
+    p.projectXZ(coords[1]),
+    p.projectXZ(coords[2]),
+    p.projectXZ(coords[3])
+  );
+
+  curveYZ = new Bezier(
+    p.projectYZ(coords[0]),
+    p.projectYZ(coords[1]),
+    p.projectYZ(coords[2]),
+    p.projectYZ(coords[3])
+  );
 }
 
 void draw() {
@@ -232,11 +264,11 @@ void setup() {
   size(500, 500);
 
   perspective = Projector.createPerspective(
-    center().plus(0, width/4), 
+    center().plus(0, w()/4), 
     yScale, 
-    new Vec2(0, height/2), 
-    new Vec2(width/2, 10), 
-    new Vec2(width, height/2)
+    new Vec2(0, h()/2), 
+    new Vec2(w()/2, 10), 
+    new Vec2(w(), h()/2)
   );
   
   // ...rest of setup() as above...
@@ -279,5 +311,3 @@ void draw() {
 Yields:
 
 ![image](https://user-images.githubusercontent.com/177243/121784688-31f45480-cb6a-11eb-9696-77ad12390817.png)
-
-
