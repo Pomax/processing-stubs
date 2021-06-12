@@ -30,12 +30,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Packing up files
         run: |
+          rm -rf bundle
           mkdir -p bundle
-          cd bundle
-          rm -f bundle.pde
-          cd ..
-          ls *.pde | xargs cat *.pde > bundle.pde
-          mv bundle.pde bundle
+          ls *.pde | xargs cat *.pde > bundle/bundle.pde
 
       # Form a commit
       - name: Commit changes
@@ -43,7 +40,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "Processing-Stubs CI"
           set +e
-          git add -A
+          git add .
           git commit -m "Automated build"
           set -e
 
