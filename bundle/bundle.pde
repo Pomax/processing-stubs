@@ -68,7 +68,7 @@ class Bezier {
 
   Vec2 getPointNear(Vec2 m, double r) {
     for (Vec2 p : points) {
-      if (dist(p, m) <= r) return p;
+      if (p.minus(m).mag() <= r) return p;
     }
     return null;
   }
@@ -990,7 +990,7 @@ class Bezier {
 
   Vec2 getPointNear(Vec2 m, double r) {
     for (Vec2 p : points) {
-      if (dist(p, m) <= r) return p;
+      if (p.minus(m).mag() <= r) return p;
     }
     return null;
   }
