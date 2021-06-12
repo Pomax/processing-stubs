@@ -4,7 +4,7 @@ Code that I constantly end up writing when using Processing.
 
 ## If you want to use everything
 
-Just grab the `./bundle/bundle.pde` file.
+Just grab the [./bundle/bundle.pde](https://raw.githubusercontent.com/Pomax/processing-stubs/main/bundle/bundle.pde) file.
 
 ## If you want to cherry pick which functionality to use:
 
