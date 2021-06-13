@@ -897,6 +897,13 @@ void vertex(Vec2 p) {
   vertex(p.x, p.y);
 }
 
+void rect(Vec2 p, Vec2 dims) {
+  rect(p.x, p.y, dims.x, dims.y);
+}
+
+double dist(Vec2 v1, Vec2 v2) {
+  return v2.minus(v1).mag();
+}
 
 Vec2 lerp(Vec2 v1, Vec2 v2, double r) {
   double mr = 1-r;
