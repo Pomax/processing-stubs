@@ -589,9 +589,13 @@ class Vec2 {
   Vec2 minus(Vec2 v) {
     return minus(v.x, v.y);
   }
-  
+
+  Vec2 times(double _x, double _y) {
+    return new Vec2(x*_x, y*_y);
+  }
+
   Vec2 times(Vec2 v) {
-    return new Vec2(x*v.x, y*v.y);
+    return times(v.x, v.y);
   }
   
   // "scale" scales in-place
@@ -750,8 +754,12 @@ class Vec3 extends Vec2 {
     return minus(v.x, v.y, v.z);
   }
   
+  Vec3 times(double _x, double _y, double _z) {
+    return new Vec3(x*_x, y*_y, z*_z);
+  }
+
   Vec3 times(Vec3 v) {
-    return new Vec3(x*v.x, y*v.y, z*v.z);
+    return times(v.x, v.y, v.z);
   }
   
   Vec3 scale(double s) {
