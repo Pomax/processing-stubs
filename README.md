@@ -1,6 +1,6 @@
 # Processing-stubs
 
-This repo houses code that I for the last however-many years I just constantly end up writing over and over again when firing up [Processing](https://processing.org/) for some quick and dirty graphics programming. Making it decidedly not-so-quick, so hopefully having everything here fixes that.
+This repo houses code that I, for the last however-many years, just constantly end up writing, over and over again, when firing up [Processing](https://processing.org/) for some quick and dirty graphics programming. Making that activity decidedly not-so-quick, so hopefully having everything here fixes that.
 
 ## If you want to use everything
 
