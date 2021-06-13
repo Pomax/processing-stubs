@@ -47,6 +47,9 @@ class Projector {
     return project(v.times(YZ));
   }
 
+  /**
+   * ...docs go here...  
+   */
   private class CabinetProjector extends Projector {
     Vec2 offset;
     double phi;
@@ -80,6 +83,9 @@ class Projector {
     }
   }
 
+  /**
+   * ...docs go here...  
+   */
   private class PerspectiveProjector extends Projector {
     double perspectiveFactor = 1.25, dyO, yFactor;
     boolean threePoint = false;
