@@ -117,17 +117,17 @@ class Bezier {
 
   final double[] ABSCISSAE = {
     -0.1252334085114689,
-    0.1252334085114689,
+     0.1252334085114689,
     -0.3678314989981802,
-    0.3678314989981802,
+     0.3678314989981802,
     -0.5873179542866175,
-    0.5873179542866175,
+     0.5873179542866175,
     -0.7699026741943047,
-    0.7699026741943047,
+     0.7699026741943047,
     -0.9041172563704749,
-    0.9041172563704749,
+     0.9041172563704749,
     -0.9815606342467192,
-    0.9815606342467192
+     0.9815606342467192
   };
   
   double length() {
@@ -155,12 +155,14 @@ class Bezier {
 double w() { 
   return (double) width;
 }
-
 double h() { 
   return (double) height;
 }
 
 // Maths functions, which mostly passes things straight over to the Math object
+
+final double PI = Math.PI;
+final double TAU = PI * 2; 
 
 double floor(double v) { 
   return Math.floor(v);
@@ -215,7 +217,7 @@ double log(double v) {
 }
 
 double log2(double v) { 
-  return Math.log(v) / Math.log(2.);
+  return Math.log(v) / Math.log(2);
 }
 
 double exp(double v) { 
@@ -252,7 +254,6 @@ double map(double v, double s1, double e1, double s2, double e2) {
 void stroke(double v) {
   stroke((int)v);
 }
-
 void stroke(double v, double a) {
   stroke((int)v, (int)a);
 }
@@ -281,6 +282,10 @@ void text(String str, double x, double y) {
   text(str, (float)x, (float)y);
 }
 
+void rect(double x, double y, double w, double h) {
+  rect((float)x, (float)y, (float)w, (float)h);
+}
+
 void quad(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) {
   quad((float)x1, (float)y1, (float)x2, (float)y2, (float)x3, (float)y3, (float)x4, (float)y4);
 }
@@ -298,9 +303,11 @@ void translate(double x, double y) {
 void rotate(double a) { 
   rotate((float)a);
 }
+
 void scale(double s) { 
   scale((float)s);
 }
+
 void scale(double xs, double sy) { 
   scale((float)xs, (float)sy);
 }
@@ -353,6 +360,9 @@ class Projector {
     return project(v.times(YZ));
   }
 
+  /**
+   * ...docs go here...  
+   */
   private class CabinetProjector extends Projector {
     Vec2 offset;
     double phi;
@@ -386,6 +396,9 @@ class Projector {
     }
   }
 
+  /**
+   * ...docs go here...  
+   */
   private class PerspectiveProjector extends Projector {
     double perspectiveFactor = 1.25, dyO, yFactor;
     boolean threePoint = false;
