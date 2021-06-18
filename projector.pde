@@ -3,6 +3,10 @@ class Projector {
   Vec3 XZ = new Vec3(1, 0, 1);
   Vec3 YZ = new Vec3(0, 1, 1);
 
+  Projector createPerspective(Vec2 origin, Vec2... vanishingPoints) {
+    return new PerspectiveProjector(origin, 1.0, vanishingPoints);
+  }
+
   Projector createPerspective(Vec2 origin, double yScale, Vec2... vanishingPoints) {
     return new PerspectiveProjector(origin, yScale, vanishingPoints);
   }
